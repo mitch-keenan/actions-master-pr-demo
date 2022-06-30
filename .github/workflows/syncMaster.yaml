@@ -10,14 +10,17 @@ jobs:
   syncMaster:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: master
-      - name: Reset branch
-        run: |
-          git fetch origin development:development
-          git reset --hard development
+      # - uses: actions/checkout@v3
+      #   with:
+      #     ref: master
+      # - name: Reset branch
+      #   run: |
+      #     git fetch origin development:development
+      #     git reset --hard development
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
+          base: master
           branch: development
+          title: Automatic dev->master PR
+          
