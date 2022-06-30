@@ -1,19 +1,19 @@
-# Pulled from example: https://github.com/peter-evans/create-pull-request/blob/main/docs/examples.md#keep-a-branch-up-to-date-with-another
+# See example: https://github.com/peter-evans/create-pull-request/blob/main/docs/examples.md#keep-a-branch-up-to-date-with-another
 
-name: Create PR into master
+name: Create PR from dev into master
 on:
   push:
     branches:
       - development
 
 jobs:
-  syncMaster:
+  sync-master:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           ref: master
-      - name: Reset promotion branch
+      - name: Reset branch
         run: |
           git fetch origin development:development
           git reset --hard development
@@ -21,3 +21,5 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: development
+          title: "Automated PR: Development Promotion"
+          
