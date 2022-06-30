@@ -10,9 +10,9 @@ jobs:
   syncMaster:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v3
-      #   with:
-      #     ref: master
+      - uses: actions/checkout@v3
+        # with:
+        #   ref: master
       # - name: Reset branch
       #   run: |
       #     git fetch origin development:development
