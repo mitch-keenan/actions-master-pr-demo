@@ -9,6 +9,7 @@ on:
 jobs:
   sync-master:
     runs-on: ubuntu-latest
+    checks: none # Prevents this from showing up in PR checklists
     steps:
       - uses: actions/checkout@v3
         with:
@@ -22,4 +23,4 @@ jobs:
         with:
           branch: development
           title: "🌳🤖 - development 🠮 master"
-          body: "Automated PR by [sync-master](./.github/workflows/sync-master.yaml) GitHub action"
+          body: "Automated PR for merging changes in `development` to `master`, created by `sync-master` GitHub action"
