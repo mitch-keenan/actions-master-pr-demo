@@ -21,5 +21,5 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: development
-          title: "Automated PR: Development Promotion"
-          
+          title: "🌳🤖 - development 🠮 master"
+          body: "Automated PR by [sync-master](./.github/workflows/sync-master.yaml) GitHub action"
